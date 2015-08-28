@@ -1,0 +1,19 @@
+~?!i&32768
+~o|295
+batchin=?
+reports=hb_college.rpt
+~/
+~/ ...call module 3.11: input matrices using batch entry
+3.11
+~+|..\..\input\model\Global\global_coefficients.in|2|
+3.11
+~+|..\..\input\Parking\college_parking_costs.in|2|
+3.11
+~+|..\..\input\model\vot\am_vot_parameters.in|2|
+3.11
+~+|..\..\input\model\tripsuppress\trip_suppress_coefficients.in|2|
+~#
+~/end: 1_input_data.mac
+~/exit emme
+~/
+q

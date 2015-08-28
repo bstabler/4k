@@ -1,0 +1,240 @@
+~?!i&32768
+~o|295
+reports=summary.rpt
+~/ ---------------------------------------------------------------
+~/ --- Regional Trip Suppression Summary
+~/ ---------------------------------------------------------------
+~/ --- Load Ensembles
+3.01
+~+|4|all|y
+~+|1|..\input\model\ensembles\parking_gz.ens|2
+~+|1|..\input\model\ensembles\districts19_ga.ens|2
+~+|1|..\input\model\ensembles\seattlecbd_gb.ens|2
+~+|1|..\input\model\ensembles\counties_gc.ens|2
+~+|1|..\input\model\ensembles\districts6_gk.ens|2
+~+|1|..\input\model\ensembles\kitsap_gl.ens|2
+q
+~/ ---------------------------------------------------------------
+~/ --- College Trip Suppression Summary
+~/ ---------------------------------------------------------------
+1.31
+~+|1
+~/ --- Copy trips and suppress percent into Temporary Matrices
+..\tripsuppress\all\emmebank
+~+|2|3|3|mf"coshda"|mf"temp01"|n|y
+~+|2|3|3|mf"coshs2"|mf"temp02"|n|y
+~+|2|3|3|mf"coshs3"|mf"temp03"|n|y
+~+|2|3|3|mf"coptda"|mf"temp04"|n|y
+~+|2|3|3|mf"copts2"|mf"temp05"|n|y
+~+|2|3|3|mf"copts3"|mf"temp06"|n|y
+q
+1.31
+~+|1
+~/ --- Copy Distribution into Temporary Matrices
+..\distribution\hbcollege\emmebank
+~+|2|3|3|mf"coldst"|mf"temp07"|n|y
+q
+~/ --- Summarize College Trips for Internal Zones
+3.21
+~+|1|y|ms1500|y|cldats|DY Coll DA Trip Suppress - Region|0|(mf"temp07"*mf"temp01"/(1-mf"temp04"))-mf"temp07"*mf"temp01"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1501|y|cls2ts|DY Coll HOV 2 Trip Suppress - Region|0|(mf"temp07"*mf"temp02"/(1-mf"temp05"))-mf"temp07"*mf"temp02"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1502|y|cls3ts|DY Coll HOV 3+ Trip Suppress - Region|0|(mf"temp07"*mf"temp03"/(1-mf"temp06"))-mf"temp07"*mf"temp03"|||y|1,%1%||1,%1%||||2
+q
+~/ ---------------------------------------------------------------
+~/ --- Home Based Non-Work Trip Suppression Summary
+~/ ---------------------------------------------------------------
+1.31
+~+|1
+~/ --- Fist Copy Mode Shares into Temporary Matrices
+..\tripsuppress\all\emmebank
+~+|2|3|3|mf"nwshda"|mf"temp01"|n|y
+~+|2|3|3|mf"nwshs2"|mf"temp02"|n|y
+~+|2|3|3|mf"nwshs3"|mf"temp03"|n|y
+~+|2|3|3|mf"nwptda"|mf"temp04"|n|y
+~+|2|3|3|mf"nwpts2"|mf"temp05"|n|y
+~+|2|3|3|mf"nwpts3"|mf"temp06"|n|y
+q
+1.31
+~+|1
+~/ --- Copy Distribution into Temporary Matrices
+..\distribution\hbother\emmebank
+~+|2|3|3|mf"hbodst"|mf"temp07"|n|y
+q
+1.31
+~+|1
+~/ --- Copy Distribution into Temporary Matrices
+..\distribution\hbshop\emmebank
+~+|2|3|3|mf"hspdst"|mf"temp08"|n|y
+q
+~/ --- Summarize HBNW Trips for Internal Zones
+3.21
+~+|1|y|ms1503|y|nwdats|DY HBO DA Trip Suppress - Region|0|((mf"temp07"+mf"temp08")*mf"temp01"/(1-mf"temp04"))-|(mf"temp07"+mf"temp08")*mf"temp01"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1504|y|nws2ts|DY HBO HOV 2 Trip Suppress - Region|0|((mf"temp07"+mf"temp08")*mf"temp02"/(1-mf"temp05"))-|(mf"temp07"+mf"temp08")*mf"temp02"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1505|y|nws3ts|DY HBO HOV 3+ Trip Suppress - Region|0|((mf"temp07"+mf"temp08")*mf"temp03"/(1-mf"temp06"))-|(mf"temp07"+mf"temp08")*mf"temp03"|||y|1,%1%||1,%1%||||2
+q
+~/ ---------------------------------------------------------------
+~/ --- School Trip Suppression Summary
+~/ ---------------------------------------------------------------
+1.31
+~+|1
+~/ --- Copy Mode Shares into Temporary Matrices
+..\tripsuppress\all\emmebank
+~+|2|3|3|mf"scshda"|mf"temp01"|n|y
+~+|2|3|3|mf"scshs2"|mf"temp02"|n|y
+~+|2|3|3|mf"scshs3"|mf"temp03"|n|y
+~+|2|3|3|mf"scptda"|mf"temp04"|n|y
+~+|2|3|3|mf"scpts2"|mf"temp05"|n|y
+~+|2|3|3|mf"scpts3"|mf"temp06"|n|y
+q
+1.31
+~+|1
+~/ --- Copy Distribution into Temporary Matrices
+..\distribution\hbschool\emmebank
+~+|2|3|3|mf"schdst"|mf"temp07"|n|y
+q
+~/ --- Summarize School Trips for Internal Zones
+3.21
+~+|1|y|ms1506|y|scdats|DY Sch DA Trip Suppress - Region|0|(mf"temp07"*mf"temp01"/(1-mf"temp04"))-mf"temp07"*mf"temp01"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1507|y|scs2ts|DY Sch HOV 2 Trip Suppress - Region|0|(mf"temp07"*mf"temp02"/(1-mf"temp05"))-mf"temp07"*mf"temp02"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1508|y|scs3ts|DY Sch HOV 3+ Trip Suppress - Region|0|(mf"temp07"*mf"temp03"/(1-mf"temp06"))-mf"temp07"*mf"temp03"|||y|1,%1%||1,%1%||||2
+q
+~/ ---------------------------------------------------------------
+~/ --- Non-Home Based Trip Suppression Summary
+~/ ---------------------------------------------------------------
+1.31
+~+|1
+~/ --- Fist Copy Mode Shares into Temporary Matrices
+..\tripsuppress\all\emmebank
+~+|2|3|3|mf"nhshda"|mf"temp01"|n|y
+~+|2|3|3|mf"nhshs2"|mf"temp02"|n|y
+~+|2|3|3|mf"nhshs3"|mf"temp03"|n|y
+~+|2|3|3|mf"nhptda"|mf"temp04"|n|y
+~+|2|3|3|mf"nhpts2"|mf"temp05"|n|y
+~+|2|3|3|mf"nhpts3"|mf"temp06"|n|y
+q
+1.31
+~+|1
+~/ --- Copy Distribution into Temporary Matrices
+..\distribution\nhbother\emmebank
+~+|2|3|3|mf"otodst"|mf"temp07"|n|y
+q
+1.31
+~+|1
+~/ --- Copy Distribution into Temporary Matrices
+..\distribution\nhbwork\emmebank
+~+|2|3|3|mf"wkodst"|mf"temp08"|n|y
+q
+~/ --- Summarize NHB Trips for Internal Zones
+3.21
+~+|1|y|ms1509|y|nhdats|DY NHB DA Trip Suppress - Region|0|((mf"temp07"+mf"temp08")*mf"temp01"/(1-mf"temp04"))-|(mf"temp07"+mf"temp08")*mf"temp01"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1510|y|nhs2ts|DY NHB HOV 2 Trip Suppress - Region|0|((mf"temp07"+mf"temp08")*mf"temp02"/(1-mf"temp05"))-|(mf"temp07"+mf"temp08")*mf"temp02"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1511|y|nhs3ts|DY NHB HOV 3+ Trip Suppress - Region|0|((mf"temp07"+mf"temp08")*mf"temp03"/(1-mf"temp06"))-|(mf"temp07"+mf"temp08")*mf"temp03"|||y|1,%1%||1,%1%||||2
+q
+~/ ---------------------------------------------------------------
+~/ --- Home Based Work Income #1 Trip Suppression Summary
+~/ ---------------------------------------------------------------
+1.31
+~+|1
+~/ --- Copy Mode Shares into Temporary Matrices
+..\tripsuppress\all\emmebank
+~+|2|3|3|mf"w1shda"|mf"temp01"|n|y
+~+|2|3|3|mf"w1shs2"|mf"temp02"|n|y
+~+|2|3|3|mf"w1shs3"|mf"temp03"|n|y
+~+|2|3|3|mf"w1ptda"|mf"temp04"|n|y
+~+|2|3|3|mf"w1pts2"|mf"temp05"|n|y
+~+|2|3|3|mf"w1pts3"|mf"temp06"|n|y
+q
+1.31
+~+|1
+~/ --- Copy Distribution into Temporary Matrices
+..\distribution\hbwork_inc1\emmebank
+~+|2|3|3|mf"hbwds1"|mf"temp07"|n|y
+q
+~/ --- Summarize Home Based Work Income #1 Trips for Internal Zones
+3.21
+~+|1|y|ms1512|y|w1dats|DY HBW1 DA Trip Suppress - Region|0|(mf"temp07"*mf"temp01"/(1-mf"temp04"))-mf"temp07"*mf"temp01"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1513|y|w1s2ts|DY HBW1 HOV 2 Trip Suppress - Region|0|(mf"temp07"*mf"temp02"/(1-mf"temp05"))-mf"temp07"*mf"temp02"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1514|y|w1s3ts|DY HBW1 HOV 3+ Trip Suppress - Region|0|(mf"temp07"*mf"temp03"/(1-mf"temp06"))-mf"temp07"*mf"temp03"|||y|1,%1%||1,%1%||||2
+q
+~/ ---------------------------------------------------------------
+~/ --- Home Based Work Income #2 Trip Suppression Summary
+~/ ---------------------------------------------------------------
+1.31
+~+|1
+~/ --- Copy Mode Shares into Temporary Matrices
+..\tripsuppress\all\emmebank
+~+|2|3|3|mf"w2shda"|mf"temp01"|n|y
+~+|2|3|3|mf"w2shs2"|mf"temp02"|n|y
+~+|2|3|3|mf"w2shs3"|mf"temp03"|n|y
+~+|2|3|3|mf"w2ptda"|mf"temp04"|n|y
+~+|2|3|3|mf"w2pts2"|mf"temp05"|n|y
+~+|2|3|3|mf"w2pts3"|mf"temp06"|n|y
+q
+1.31
+~+|1
+~/ --- Copy Distribution into Temporary Matrices
+..\distribution\hbwork_inc2\emmebank
+~+|2|3|3|mf"hbwds2"|mf"temp07"|n|y
+q
+~/ --- Summarize Home Based Work Income #2 Trips for Internal Zones
+3.21
+~+|1|y|ms1515|y|w1dats|DY HBW2 DA Trip Suppress - Region|0|(mf"temp07"*mf"temp01"/(1-mf"temp04"))-mf"temp07"*mf"temp01"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1516|y|w1s2ts|DY HBW2 HOV 2 Trip Suppress - Region|0|(mf"temp07"*mf"temp02"/(1-mf"temp05"))-mf"temp07"*mf"temp02"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1517|y|w1s3ts|DY HBW2 HOV 3+ Trip Suppress - Region|0|(mf"temp07"*mf"temp03"/(1-mf"temp06"))-mf"temp07"*mf"temp03"|||y|1,%1%||1,%1%||||2
+q
+~/ ---------------------------------------------------------------
+~/ --- Home Based Work Income #3 Trip Suppression Summary
+~/ ---------------------------------------------------------------
+1.31
+~+|1
+~/ --- Copy Mode Shares into Temporary Matrices
+..\tripsuppress\all\emmebank
+~+|2|3|3|mf"w3shda"|mf"temp01"|n|y
+~+|2|3|3|mf"w3shs2"|mf"temp02"|n|y
+~+|2|3|3|mf"w3shs3"|mf"temp03"|n|y
+~+|2|3|3|mf"w3ptda"|mf"temp04"|n|y
+~+|2|3|3|mf"w3pts2"|mf"temp05"|n|y
+~+|2|3|3|mf"w3pts3"|mf"temp06"|n|y
+q
+1.31
+~+|1
+~/ --- Copy Distribution into Temporary Matrices
+..\distribution\hbwork_inc3\emmebank
+~+|2|3|3|mf"hbwds3"|mf"temp07"|n|y
+q
+~/ --- Summarize Home Based Work Income #3 Trips for Internal Zones
+3.21
+~+|1|y|ms1518|y|w3dats|DY HBW3 DA Trip Suppress - Region|0|(mf"temp07"*mf"temp01"/(1-mf"temp04"))-mf"temp07"*mf"temp01"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1519|y|w3s2ts|DY HBW3 HOV 2 Trip Suppress - Region|0|(mf"temp07"*mf"temp02"/(1-mf"temp05"))-mf"temp07"*mf"temp02"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1520|y|w3s3ts|DY HBW3 HOV 3+ Trip Suppress - Region|0|(mf"temp07"*mf"temp03"/(1-mf"temp06"))-mf"temp07"*mf"temp03"|||y|1,%1%||1,%1%||||2
+q
+~/ ---------------------------------------------------------------
+~/ --- Home Based Work Income #4 Trip Suppression Summary
+~/ ---------------------------------------------------------------
+1.31
+~+|1
+~/ --- Copy Mode Shares into Temporary Matrices
+..\tripsuppress\all\emmebank
+~+|2|3|3|mf"w4shda"|mf"temp01"|n|y
+~+|2|3|3|mf"w4shs2"|mf"temp02"|n|y
+~+|2|3|3|mf"w4shs3"|mf"temp03"|n|y
+~+|2|3|3|mf"w4ptda"|mf"temp04"|n|y
+~+|2|3|3|mf"w4pts2"|mf"temp05"|n|y
+~+|2|3|3|mf"w4pts3"|mf"temp06"|n|y
+q
+1.31
+~+|1
+~/ --- Copy Distribution into Temporary Matrices
+..\distribution\hbwork_inc4\emmebank
+~+|2|3|3|mf"hbwds4"|mf"temp07"|n|y
+q
+~/ --- Summarize Home Based Work Income #4 Trips for Internal Zones
+3.21
+~+|1|y|ms1521|y|w4dats|DY HBW4 DA Trip Suppress - Region|0|(mf"temp07"*mf"temp01"/(1-mf"temp04"))-mf"temp07"*mf"temp01"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1522|y|w4s2ts|DY HBW4 HOV 2 Trip Suppress - Region|0|(mf"temp07"*mf"temp02"/(1-mf"temp05"))-mf"temp07"*mf"temp02"|||y|1,%1%||1,%1%||||2
+~+|1|y|ms1523|y|w4s3ts|DY HBW4 HOV 3+ Trip Suppress - Region|0|(mf"temp07"*mf"temp03"/(1-mf"temp06"))-mf"temp07"*mf"temp03"|||y|1,%1%||1,%1%||||2
+q
+~/
+~/end: 2-42_tripsuppress_summary.mac
+~/exit emme
+q

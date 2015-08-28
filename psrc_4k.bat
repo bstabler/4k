@@ -7,7 +7,7 @@ REM Start of Model Run
 echo PSRC 4k Model Began on %date% at %time%. > psrc_4k_log.txt
 
 REM Parameters are passed to the Batch File via the Control File "4k.ctl"
-FOR /F "tokens=1* delims==" %%A IN ('FINDSTR /R /X /C:"[^=][^=]*=.*" "4k.ctl"') DO SET %%A=%%~B
+for /f "tokens=1,2 delims==" %%a in (4k.ctl) do SET %%a=%%b
 
 REM Give some basic information about the inputs used
 echo Land used inputs are for year %LUYear%. >> psrc_4k_log.txt
@@ -69,15 +69,18 @@ if %SummaryBank% == Yes (
      if exist errors erase errors
      if exist *.rp* erase *.rp*
 
-     call emme -ng newbank -m macros\0-1_create_databank.mac
-     call emme -ng 000 -m macros\1-0_import_scenarios.mac
+	 call emme -ng newbank -m macros\0-1_create_databank.mac
+	 call emme -ng 000 -m macros\1-0_import_scenarios.mac
 	 call emme -ng 000 -m macros\1-1_initialize_matrices.mac
 	 call emme -ng 000 -m macros\1-2_input_triptables.mac
-     call emme -ng 000 -m macros\2-0_regional_link_summary.mac
+	 call emme -ng 000 -m macros\2-0_regional_link_summary.mac
 	 call emme -ng 000 -m macros\2-1_screenline_summary.mac
 	 call emme -ng 000 -m macros\2-2_regional_triptable_summary.mac
 	 call emme -ng 000 -m macros\2-3_trip_distribution_summary.mac %hightaz%
 	 call emme -ng 000 -m macros\2-4_modechoice_summary.mac %hightaz%
+	 IF %RunTripSupress%==Yes (
+	   call emme -ng 000 -m macros\2-4-2_tripsuppress_summary.mac %hightaz%
+	 )
 	 call emme -ng 000 -m macros\2-5_transit_summary.mac
 	 call emme -ng 000 -m macros\2-6_trip_length_distribution_summary.mac %hightaz%
 	 call emme -ng 000 -m macros\2-7_work_modechoice_centers.mac %hightaz%

@@ -1,0 +1,28 @@
+~?!i&32768
+~o|295
+batchin=?
+reports=hbw1.rpt
+~/
+~/ ...call module 3.21: matrix calculations
+~/ ...calculate hbw1 trip suppression percents
+3.21
+~/ ...shared ride 3+
+~/ ...pct = coef * ( (beta*cost_diff * (dist_ratio^lambda) * (inc_ratio^lambda)) + (beta * time_diff) )
+~+|1|y|mf"w1pts3"|n
+ms"exlpct" .min. ms"hbwcoe"*
+(
+ms"hbwbc"*(mf"s3bct"-mf"s3bctb")/100*((1/1)^ms"hbwdl")*(1/1)^ms"hbwil"
++
+ms"hbwbt"*(mf"s3btm"-mf"s3btmb")
+)
+~+|||y|1,%3%||1,%3%||2
+~/ ...apply hbw1 trip suppression percents
+~+|1|y|mf"w1shs3"|n
+mf"w1shs3"*(1-mf"w1pts3")
+~+|||y|1,%3%||1,%3%||2
+q
+~#
+~/end: 6_calculate_shared_ride_3+_percent.mac
+~/exit emme
+~/
+q

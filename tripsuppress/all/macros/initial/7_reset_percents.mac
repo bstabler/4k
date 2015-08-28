@@ -1,0 +1,38 @@
+~?!i&32768
+~o|295
+batchin=?
+reports=hb_college.rpt
+~/
+~/ ...call module 3.21: matrix calculations
+~/ ...set trip suppressions percents to 0
+3.21
+~+|1|y|mf"coptda"|n|0|||n|2
+~+|1|y|mf"copts2"|n|0|||n|2
+~+|1|y|mf"copts3"|n|0|||n|2
+~+|1|y|mf"nwptda"|n|0|||n|2
+~+|1|y|mf"nwpts2"|n|0|||n|2
+~+|1|y|mf"nwpts3"|n|0|||n|2
+~+|1|y|mf"scptda"|n|0|||n|2
+~+|1|y|mf"scpts2"|n|0|||n|2
+~+|1|y|mf"scpts3"|n|0|||n|2
+~+|1|y|mf"nhptda"|n|0|||n|2
+~+|1|y|mf"nhpts2"|n|0|||n|2
+~+|1|y|mf"nhpts3"|n|0|||n|2
+~+|1|y|mf"w1ptda"|n|0|||n|2
+~+|1|y|mf"w1pts2"|n|0|||n|2
+~+|1|y|mf"w1pts3"|n|0|||n|2
+~+|1|y|mf"w2ptda"|n|0|||n|2
+~+|1|y|mf"w2pts2"|n|0|||n|2
+~+|1|y|mf"w2pts3"|n|0|||n|2
+~+|1|y|mf"w3ptda"|n|0|||n|2
+~+|1|y|mf"w3pts2"|n|0|||n|2
+~+|1|y|mf"w3pts3"|n|0|||n|2
+~+|1|y|mf"w4ptda"|n|0|||n|2
+~+|1|y|mf"w4pts2"|n|0|||n|2
+~+|1|y|mf"w4pts3"|n|0|||n|2
+q
+~#
+~/end: 0_reset_percents.mac
+~/exit emme
+~/
+q
