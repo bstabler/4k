@@ -16,6 +16,14 @@ call batchfiles\mode_choice.bat
 cd ..
 echo Final Iteration Mode Choice completed on %date% at %time%. >> psrc_4k_log.txt
 
+REM Trip Suppression
+IF %RunTripSupress%==Yes (
+  cd tripsuppress
+  call batchfiles\trip_suppress.bat
+  cd ..
+  echo Iteration %iternum% Trip Suppression completed on %date% at %time%. >> psrc_4k_log.txt
+)
+
 REM Time of Day
 cd timeofday
 call batchfiles\time_of_day_model.bat
@@ -32,9 +40,13 @@ echo Final Iteration Park and Ride Trip Tables completed on %date% at %time%. >>
 
 REM Trip Tables
 cd triptables\all
-call batchfiles\trip_tables.bat
+IF %RunTripSupress%==Yes (
+  call batchfiles\trip_tables_tripsuppress.bat
+) ELSE (
+  call batchfiles\trip_tables.bat
+)
 cd ..\..
-echo Final Iteration Trip Tables completed on %date% at %time%. >> psrc_4k_log.txt
+echo Iteration %iternum% Trip Tables completed on %date% at %time%. >> psrc_4k_log.txt
 
 REM Assignments
 cd assignments

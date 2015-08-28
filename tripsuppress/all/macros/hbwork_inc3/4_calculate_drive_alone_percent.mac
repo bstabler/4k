@@ -1,0 +1,28 @@
+~?!i&32768
+~o|295
+batchin=?
+reports=hbw3.rpt
+~/
+~/ ...call module 3.21: matrix calculations
+~/ ...calculate hbw3 trip suppression percents
+3.21
+~/ ...drive alone
+~/ ...pct = coef * ( (beta*cost_diff * (dist_ratio^lambda) * (inc_ratio^lambda)) + (beta * time_diff) )
+~+|1|y|mf"w3ptda"|n
+ms"exlpct" .min. ms"hbwcoe"*
+(
+ms"hbwbc"*(mf"dabct"-mf"dabctb")/100*((1/1)^ms"hbwdl")*(1/1)^ms"hbwil"
++
+ms"hbwbt"*(mf"dabtm"-mf"dabtmb")
+)
+~+|||y|1,%3%||1,%3%||2
+~/ ...apply hbw3 trip suppression percents
+~+|1|y|mf"w3shda"|n
+mf"w3shda"*(1-mf"w3ptda")
+~+|||y|1,%3%||1,%3%||2
+q
+~#
+~/end: 4_calculate_drive_alone_percent.mac
+~/exit emme
+~/
+q

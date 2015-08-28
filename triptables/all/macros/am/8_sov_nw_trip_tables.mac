@@ -9,7 +9,7 @@ reports=am_trip_tables.rpt
 ~/ ... import sov nonwork mode shares
 1.31
 ~+|1
-..\..\modechoice\all\emmebank
+%1%
 ~+|2|3|3|mf"coshda"|mf"coll"|n|y
 ~+|2|3|3|mf"nwshda"|mf"hbo"|n|y
 ~+|2|3|3|mf"scshda"|mf"sch"|n|y
@@ -31,9 +31,9 @@ q
 ~/ ...sov non-work
 ~+|1|y|mf"pa"|n
 mf"coldst"*mf"coll"*0.399*0.514+
-mf"hbodst"*mf"hbo"*mf"tod4"*0.479+
+mf"hbodst"*mf"hbo"*mf"tod6"*0.479+
 mf"schdst"*0.676*mf"sch"*0.830*0.556+
-mf"hspdst"*mf"hbo"*mf"tod6"*0.365+
+mf"hspdst"*mf"hbo"*mf"tod4"*0.365+
 mf"otodst"*mf"nhb"*0.080/2+
 mf"wkodst"*mf"nhb"*0.183/2
 ~+|||n|2
@@ -43,9 +43,9 @@ q
 ~/ ...sov non-work
 ~+|1|y|mf"ap"|n
 mf"coldst"*mf"coll"*0.000*0.486+
-mf"hbodst"*mf"hbo"*mf"tod3"*0.521+
+mf"hbodst"*mf"hbo"*mf"tod5"*0.521+
 mf"schdst"*0.676*mf"sch"*0.004*0.444+
-mf"hspdst"*mf"hbo"*mf"tod5"*0.635+
+mf"hspdst"*mf"hbo"*mf"tod3"*0.635+
 mf"otodst"*mf"nhb"*0.080/2+
 mf"wkodst"*mf"nhb"*0.183/2
 ~+|||n|2

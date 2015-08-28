@@ -18,6 +18,7 @@ distribution\nhbother
 distribution\nhbwork
 distribution\trucks
 modechoice\all
+tripsuppress\all
 skims\iz_tt
 skims\bidirectional\distance
 skims\bidirectional\generalized_cost
