@@ -27,6 +27,10 @@ reports=3_initialize_scalars.rpt
 ~+|1|ms13|ltatfe|lgt trk attrs - refact total exts|0
 ~+|1|ms14|mtatfe|med trk attrs - refact total exts|0
 ~+|1|ms15|htatfe|hvy trk attrs - refact total exts|0
+~#
+~+|1|ms16|mvotlt|md light truck vot|0
+~+|1|ms17|mvotmd|md medium truck vot|0
+~+|1|ms18|mvothv|md heavy truck vot|0
 q
 ~#
 ~/end: 3_initialize_scalars.mac

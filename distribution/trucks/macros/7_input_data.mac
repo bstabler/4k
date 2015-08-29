@@ -29,6 +29,8 @@ q
 ~+|..\..\input\tripends\mtattf.in|2|
 3.11
 ~+|..\..\input\tripends\htattf.in|2|
+3.11
+~+|..\..\input\model\vot\md_vot_parameters.in|2|
 ~#
 ~/end: 7_input_data.mac
 ~/exit emme
