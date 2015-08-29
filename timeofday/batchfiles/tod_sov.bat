@@ -12,6 +12,7 @@ call emme -ng 000 -m macros\initial\3_initialize_destination_matrices.mac
 call emme -ng 000 -m macros\initial\4_initialize_full_matrices.mac
 call emme -ng 000 -m macros\initial\5_import_data.mac
 call emme -ng 000 -m macros\initial\6_calculate_hh_size.mac
+call emme -ng 000 -m macros\initial\7_import_dist_and_mc_matrices.mac
 
 REM Home Based Other
 call emme -ng 000 -m macros\hbother\1_import_matrices.mac
@@ -54,6 +55,8 @@ call emme -ng 000 -m macros\income4\2_calculate_adjusted_delay.mac
 call emme -ng 000 -m macros\income4\3_calculate_adjusted_bridge_flag.mac
 call emme -ng 000 -m macros\income4\4_calculate_hbwork_inc4_sov_a-p_tod_shares.mac
 call emme -ng 000 -m macros\income4\5_calculate_hbwork_inc4_sov_p-a_tod_shares.mac
+
+call emme -ng 000 -m macros\initial\8_output_results.mac
 
 REM write indicator file
 cd ..

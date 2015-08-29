@@ -224,6 +224,18 @@ mf"util29"+mf"util30"+mf"util31"+mf"util32"
 ~+|1|y|mf"ni5ns"|n
 (1.0-(mf"am5ns"+mf"md5ns"+mf"pm5ns"+mf"ev5ns").max.0)
 ~+|||n|2
+~#
+~# Time period specific trips
+~r1=1
+~:TIMEPERIODLOOP
+~t1=%r1%
+~?r1<10
+~t1=0%r1%
+~/ ...time period %t1% trips
+~+|1|y|ms"so%r1%ap"|n|mf"hbodst"*mf"nwshda"*mf"util%t1%"/mf"utils"||mf"utils"|0,0,ex|n|||2
+~r1+1
+~?!r1>32
+~$TIMEPERIODLOOP
 q
 ~#
 ~/end: 4_calculate_hbother_sov_a-p_tod_shares.mac

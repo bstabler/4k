@@ -124,6 +124,29 @@ reports=initialization.rpt
 ~+|1|mf113|pm6sr3|sr3+ pm p-a tod share - hbother|0
 ~+|1|mf114|ev6sr3|sr3+ ev p-a tod share - hbother|0
 ~+|1|mf115|ni6sr3|sr3+ ni p-a tod share - hbother|0
+~/ ... Trip Distribution
+~+|1|mf120|hbodst|hbother trip distribution|0
+~+|1|mf121|hspdst|hbshop trip distribution|0
+~+|1|mf122|hbwds1|hbwork1 trip distribution|0
+~+|1|mf123|hbwds2|hbwork2 trip distribution|0
+~+|1|mf124|hbwds3|hbwork3 trip distribution|0
+~+|1|mf125|hbwds4|hbwork4 trip distribution|0
+~/ ... Mode Choice
+~+|1|mf130|nwshda|nonwork SOV mode share|0
+~+|1|mf131|w1shda|hbw1 SOV mode share|0
+~+|1|mf132|w2shda|hbw2 SOV mode share|0
+~+|1|mf133|w3shda|hbw3 SOV mode share|0
+~+|1|mf134|w4shda|hbw4 SOV mode share|0
+~+|1|mf135|nwshs2|nonwork HOV2 mode share|0
+~+|1|mf136|w1shs2|hbw1 HOV2 mode share|0
+~+|1|mf137|w2shs2|hbw2 HOV2 mode share|0
+~+|1|mf138|w3shs2|hbw3 HOV2 mode share|0
+~+|1|mf139|w4shs2|hbw4 HOV2 mode share|0
+~+|1|mf140|nwshs3|nonwork HOV3 mode share|0
+~+|1|mf141|w1shs3|hbw1 HOV3 mode share|0
+~+|1|mf142|w2shs3|hbw2 HOV3 mode share|0
+~+|1|mf143|w3shs3|hbw3 HOV3 mode share|0
+~+|1|mf144|w4shs3|hbw4 HOV3 mode share|0
 q
 ~#
 ~/end: 4_initialize_full_matrices.mac

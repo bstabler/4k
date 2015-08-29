@@ -15,13 +15,14 @@ call emme -ng 000 -m macros\6_calculate_hh_size.mac
 call emme -ng 000 -m macros\7_import_matrices.mac
 call emme -ng 000 -m macros\8_calculate_adjusted_delay.mac
 call emme -ng 000 -m macros\9_calculate_adjusted_bridge_flag.mac
+call emme -ng 000 -m macros\10_0_import_dist_and_mc_matrices.mac
 call emme -ng 000 -m macros\10_calculate_hbwork_hov_a-p_tod_shares.mac
 call emme -ng 000 -m macros\11_calculate_hbwork_hov_p-a_tod_shares.mac
 call emme -ng 000 -m macros\12_calculate_hbshop_hov_a-p_tod_shares.mac
 call emme -ng 000 -m macros\13_calculate_hbshop_hov_p-a_tod_shares.mac
 call emme -ng 000 -m macros\14_calculate_hbother_hov_a-p_tod_shares.mac
 call emme -ng 000 -m macros\15_calculate_hbother_hov_p-a_tod_shares.mac
-
+call emme -ng 000 -m macros\16_output_results.mac
 REM write indicator file
 cd ..
 echo "HOV Time of Day Model finished" > doneHOV.ind

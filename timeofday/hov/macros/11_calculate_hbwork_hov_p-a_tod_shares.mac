@@ -247,6 +247,25 @@ mf"util29"+mf"util30"+mf"util31"+mf"util32"
 ~+|1|y|mf"ni2sr%x%"|n
 (1.0-(mf"am2sr%x%"+mf"md2sr%x%"+mf"pm2sr%x%"+mf"ev2sr%x%").max.0)
 ~+|||n|2
+~#
+~# Time period specific trips
+~r1=1
+~:TIMEPERIODLOOP
+~t1=%r1%
+~?r1<10
+~t1=0%r1%
+~/ ...time period %t1% hov%x% trips
+~+|1|y|ms"todtmp"|n|(mf"hbwds1"*mf"w1shs%x%")*(mf"util%t1%"/mf"utils")||mf"utils"|0,0,ex|n|||2
+~+|1|y|ms"%x%w%r1%pa"|n|ms"%x%w%r1%pa"+ms"todtmp"|||2
+~+|1|y|ms"todtmp"|n|(mf"hbwds2"*mf"w2shs%x%")*(mf"util%t1%"/mf"utils")||mf"utils"|0,0,ex|n|||2
+~+|1|y|ms"%x%w%r1%pa"|n|ms"%x%w%r1%pa"+ms"todtmp"|||2
+~+|1|y|ms"todtmp"|n|(mf"hbwds3"*mf"w3shs%x%")*(mf"util%t1%"/mf"utils")||mf"utils"|0,0,ex|n|||2
+~+|1|y|ms"%x%w%r1%pa"|n|ms"%x%w%r1%pa"+ms"todtmp"|||2
+~+|1|y|ms"todtmp"|n|(mf"hbwds4"*mf"w4shs%x%")*(mf"util%t1%"/mf"utils")||mf"utils"|0,0,ex|n|||2
+~+|1|y|ms"%x%w%r1%pa"|n|ms"%x%w%r1%pa"+ms"todtmp"|||2
+~r1+1
+~?!r1>32
+~$TIMEPERIODLOOP
 q
 ~# ...end loop checks
 ~x+1

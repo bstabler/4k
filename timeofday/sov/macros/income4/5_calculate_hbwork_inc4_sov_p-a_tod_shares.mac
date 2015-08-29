@@ -244,6 +244,18 @@ mf"util29"+mf"util30"+mf"util31"+mf"util32"
 ~+|1|y|mf"ni2ns4"|n
 (1.0-(mf"am2ns4"+mf"md2ns4"+mf"pm2ns4"+mf"ev2ns4").max.0)
 ~+|||n|2
+~#
+~# Time period specific trips
+~r1=1
+~:TIMEPERIODLOOP
+~t1=%r1%
+~?r1<10
+~t1=0%r1%
+~/ ...time period %t1% trips
+~+|1|y|ms"s4%r1%pa"|n|mf"hbwds4"*mf"w4shda"*mf"util%t1%"/mf"utils"||mf"utils"|0,0,ex|n|||2
+~r1+1
+~?!r1>32
+~$TIMEPERIODLOOP
 q
 ~#
 ~/end: 5_calculate_hbwork_inc4_sov_p-a_tod_shares.mac

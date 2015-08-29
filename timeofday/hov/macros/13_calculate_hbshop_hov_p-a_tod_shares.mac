@@ -236,6 +236,18 @@ mf"util29"+mf"util30"+mf"util31"+mf"util32"
 ~+|1|y|mf"ni4sr%x%"|n
 (1.0-(mf"am4sr%x%"+mf"md4sr%x%"+mf"pm4sr%x%"+mf"ev4sr%x%").max.0)
 ~+|||n|2
+~#
+~# Time period specific trips
+~r1=1
+~:TIMEPERIODLOOP
+~t1=%r1%
+~?r1<10
+~t1=0%r1%
+~/ ...time period %t1% trips
+~+|1|y|ms"%x%s%r1%pa"|n|(mf"hspdst"*mf"nwshs%x%")*mf"util%t1%"/mf"utils"||mf"utils"|0,0,ex|n|||2
+~r1+1
+~?!r1>32
+~$TIMEPERIODLOOP
 q
 ~# ...end loop checks
 ~x+1
