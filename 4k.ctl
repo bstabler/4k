@@ -29,3 +29,6 @@ SummaryBank=Yes
 
 Flag to Run Trip Suppression after Mode Choice
 RunTripSupress=Yes
+
+Flag to Run Toll Route Choice With Assignment
+RunTollRouteChoice=Yes

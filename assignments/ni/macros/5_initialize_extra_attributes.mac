@@ -45,6 +45,30 @@ s=1006
 ~+|2|2|@mveh|medium truck vehicles|0
 ~+|2|2|@hveh|heavy truck vehicles|0
 ~+|2|2|@tveh|total vehicles|0
+~/ ...create vehicle class toll extra attribute(s)
+~+|2|2|@sovt|sov volume toll|0
+~+|2|2|@hov2t|hov 2 volume toll|0
+~+|2|2|@hov3t|hov 3+ volume toll|0
+~+|2|2|@vpolt|vanpool volume toll|0
+~+|2|2|@hbw1t|hbw1 sov volume toll|0
+~+|2|2|@hbw2t|hbw2 sov volume toll|0
+~+|2|2|@hbw3t|hbw3 sov volume toll|0
+~+|2|2|@hbw4t|hbw4 sov volume toll|0
+~+|2|2|@lghtt|light truck volume toll|0
+~+|2|2|@mdiut|medium truck volume toll|0
+~+|2|2|@hevyt|heavy truck volume toll|0
+~/ ...create vehicle class non-toll extra attribute(s)
+~+|2|2|@sovn|sov volume non-toll|0
+~+|2|2|@hov2n|hov 2 volume non-toll|0
+~+|2|2|@hov3n|hov 3+ volume non-toll|0
+~+|2|2|@vpoln|vanpool volume non-toll|0
+~+|2|2|@hbw1n|hbw1 sov volume non-toll|0
+~+|2|2|@hbw2n|hbw2 sov volume non-toll|0
+~+|2|2|@hbw3n|hbw3 sov volume non-toll|0
+~+|2|2|@hbw4n|hbw4 sov volume non-toll|0
+~+|2|2|@lghtn|light truck volume non-toll|0
+~+|2|2|@mdiun|medium truck volume non-toll|0
+~+|2|2|@hevyn|heavy truck volume non-toll|0
 q
 ~#
 ~/end: 5_initialize_extra_attributes.mac

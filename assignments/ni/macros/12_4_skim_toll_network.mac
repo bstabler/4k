@@ -1,0 +1,129 @@
+~?!i&32768
+~o|295
+batchin=?
+reports=assign.rpt
+~/
+~/ ...set active scenario
+s=1006
+~/ ...call module 2.41: network calculations
+2.41
+~/ ...copy network attribute 'timau' to '@timau'
+~+|1|y|@timau|n|timau||*|2|2
+q
+~/ ...call module 6.16: path analysis for path-based traffic assignment
+6.16
+~# ...time (or cost) for shortest path
+1
+~/ ...skim auto vehicle classes for generalized cost
+~/ ...specify generalized cost matrices
+~+|mf"na1cst"|n /class 1: non-work sov toll
+~+|mf"na2cst"|n /class 2: hov 2 toll
+~+|mf"na3cst"|n /class 3: hov 3+ toll
+~+|mf"na4cst"|n /class 4: vanpool toll
+~+|mf"nacs1t"|n /class 5: hbw income 1 sov toll
+~+|mf"nacs2t"|n /class 6: hbw income 2 sov toll
+~+|mf"nacs3t"|n /class 7: hbw income 3 sov toll
+~+|mf"nacs4t"|n /class 8: hbw income 4 sov toll
+~+|mf"nltcst"|n /class 9: light truck toll
+~+|mf"nmdcst"|n /class 10: medium truck toll
+~+|mf"nhycst"|n /class 11: heavy truck toll
+~+|mf"na1csn"|n /class 12: non-work sov non-toll
+~+|mf"na2csn"|n /class 13: hov 2 non-toll
+~+|mf"na3csn"|n /class 14: hov 3+ non-toll
+~+|mf"na4csn"|n /class 15: vanpool non-toll
+~+|mf"nacs1n"|n /class 16: hbw income 1 sov non-toll
+~+|mf"nacs2n"|n /class 17: hbw income 2 sov non-toll
+~+|mf"nacs3n"|n /class 18: hbw income 3 sov non-toll
+~+|mf"nacs4n"|n /class 19: hbw income 4 sov non-toll
+~+|mf"nltcsn"|n /class 20: light truck non-toll
+~+|mf"nmdcsn"|n /class 21: medium truck non-toll
+~+|mf"nhycsn"|n /class 22: heavy truck non-toll
+~/ ...write report file         
+2
+~#
+~/ ...skim auto vehicle classes for time
+~# ...user-defined path analysis
+4
+~# ...link attribute for path analysis
+@timau
+~# ...turn attribute for path analysis
+
+~# ...operator to compute path attributes
++
+~# ...lower, upper threshold for selected paths
+
+~# ...aggregation for O-D attribute
+3  /average   
+~# ...paths considered in O-D attribute
+1  /all paths 
+~/ ...specify time matrices
+~+||mf"na1tmt"|n||| /class 1: non-work sov toll
+~+||mf"na2tmt"|n||| /class 2: hov 2 toll
+~+||mf"na3tmt"|n||| /class 3: hov 3+ toll
+~+||mf"na4tmt"|n||| /class 4: vanpool toll
+~+||mf"natm1t"|n||| /class 5: hbw income 1 sov toll
+~+||mf"natm2t"|n||| /class 6: hbw income 2 sov toll
+~+||mf"natm3t"|n||| /class 7: hbw income 3 sov toll
+~+||mf"natm4t"|n||| /class 8: hbw income 4 sov toll
+~+||mf"nlttmt"|n||| /class 9: light truck toll
+~+||mf"nmdtmt"|n||| /class 10: medium truck toll
+~+||mf"nhytmt"|n||| /class 11: heavy truck toll
+~+||mf"na1tmn"|n||| /class 12: non-work sov non-toll
+~+||mf"na2tmn"|n||| /class 13: hov 2 non-toll
+~+||mf"na3tmn"|n||| /class 14: hov 3+ non-toll
+~+||mf"na4tmn"|n||| /class 15: vanpool non-toll
+~+||mf"natm1n"|n||| /class 16: hbw income 1 sov non-toll
+~+||mf"natm2n"|n||| /class 17: hbw income 2 sov non-toll
+~+||mf"natm3n"|n||| /class 18: hbw income 3 sov non-toll
+~+||mf"natm4n"|n||| /class 19: hbw income 4 sov non-toll
+~+||mf"nlttmn"|n||| /class 20: light truck non-toll
+~+||mf"nmdtmn"|n||| /class 21: medium truck non-toll
+~+||mf"nhytmn"|n||| /class 22: heavy truck non-toll
+~/ ...write report file         
+2
+~#
+~/ ...skim auto vehicle classes for distance
+~# ...user-defined path analysis
+4
+~# ...link attribute for path analysis
+length
+~# ...turn attribute for path analysis
+
+~# ...operator to compute path attributes
++
+~# ...lower, upper threshold for selected paths
+
+~# ...aggregation for O-D attribute
+3  /average   
+~# ...paths considered in O-D attribute
+1  /all paths 
+~/ ...specify distance matrices
+~+||mf"na1dst"|n||| /class 1: non-work sov toll
+~+||mf"na2dst"|n||| /class 2: hov 2 toll
+~+||mf"na3dst"|n||| /class 3: hov 3+ toll
+~+||mf"na4dst"|n||| /class 4: vanpool toll
+~+||mf"nads1t"|n||| /class 5: hbw income 1 sov toll
+~+||mf"nads2t"|n||| /class 6: hbw income 2 sov toll
+~+||mf"nads3t"|n||| /class 7: hbw income 3 sov toll
+~+||mf"nads4t"|n||| /class 8: hbw income 4 sov toll
+~+||mf"nltdst"|n||| /class 9: light truck toll
+~+||mf"nmddst"|n||| /class 10: medium truck toll
+~+||mf"nhydst"|n||| /class 11: heavy truck toll
+~+||mf"na1dsn"|n||| /class 12: non-work sov non-toll
+~+||mf"na2dsn"|n||| /class 13: hov 2 non-toll
+~+||mf"na3dsn"|n||| /class 14: hov 3+ non-toll
+~+||mf"na4dsn"|n||| /class 15: vanpool non-toll
+~+||mf"nads1n"|n||| /class 16: hbw income 1 sov non-toll
+~+||mf"nads2n"|n||| /class 17: hbw income 2 sov non-toll
+~+||mf"nads3n"|n||| /class 18: hbw income 3 sov non-toll
+~+||mf"nads4n"|n||| /class 19: hbw income 4 sov non-toll
+~+||mf"nltdsn"|n||| /class 20: light truck non-toll
+~+||mf"nmddsn"|n||| /class 21: medium truck non-toll
+~+||mf"nhydsn"|n||| /class 22: heavy truck non-toll
+~/ ...write report file
+2
+q
+~#
+~/exit emme
+~/
+q

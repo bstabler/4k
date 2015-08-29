@@ -1,0 +1,34 @@
+~?!i&32768
+~o|295
+batchin=?
+reports=assign.rpt
+~/
+s=1006
+2.41
+~/aggregate toll and non-toll vehicles
+~+|1|y|@sov|n|@sovt+@sovn||*|2|2
+~+|1|y|@hov2|n|@hov2t+@hov2n||*|2|2
+~+|1|y|@hov3|n|@hov3t+@hov3n||*|2|2
+~+|1|y|@vpool|n|@vpolt+@vpoln||*|2|2
+~+|1|y|@hbw1|n|@hbw1t+@hbw1n||*|2|2
+~+|1|y|@hbw2|n|@hbw2t+@hbw2n||*|2|2
+~+|1|y|@hbw3|n|@hbw3t+@hbw3n||*|2|2
+~+|1|y|@hbw4|n|@hbw4t+@hbw4n||*|2|2
+~+|1|y|@light|n|@lghtt+@lghtn||*|2|2
+~+|1|y|@mediu|n|@mdiut+@mdiun||*|2|2
+~+|1|y|@heavy|n|@hevyt+@hevyn||*|2|2
+~/calculate total vehicles
+~# ...sum total sov work vehicles
+~+|1|y|@sovw|n|@hbw1+@hbw2+@hbw3+@hbw4||*|2|2
+~# ...calculate medium and heavy truck vehicles
+~+|1|y|@mveh|n|@mediu/1.5||*|2|2
+~+|1|y|@hveh|n|@heavy/2||*|2|2
+~# ...calculate bus vehicles
+~+|1|y|@bveh|n|@trnv3/2||*|2|2
+~# ...sum total vehicles on links
+~+|1|y|@tveh|n|@sov+@sovw+@hov2+@hov3+@vpool+@light+@mveh+@hveh+@bveh||*|2|2
+q
+~#
+~/exit emme
+~/
+q

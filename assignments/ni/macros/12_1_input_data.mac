@@ -1,0 +1,14 @@
+~?!i&32768
+~o|295
+batchin=?
+reports=assign.rpt
+~/
+~/ ...call module 3.11: input matrices using batch entry
+3.11
+~+|..\..\input\model\Global\global_coefficients.in|2|
+3.11
+~+|..\..\input\model\Global\truck_operating_costs.in|2|
+~#
+~/exit emme
+~/
+q

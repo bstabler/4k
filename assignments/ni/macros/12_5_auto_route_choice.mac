@@ -1,0 +1,220 @@
+~?!i&32768
+~o|295
+batchin=?
+reports=assign.rpt
+~/
+~/ ...calculate toll and non-toll split
+~/ ...utility = -(time_c*time_diff + time_c/(1/VOT)*(dist_diff*AOC + cost_diff))
+~/
+~r01=-0.09 /time coefficient class 1: non-work sov
+~r02=-0.09 /time coefficient class 2: hov 2
+~r03=-0.09 /time coefficient class 3: hov 3+
+~r04=-0.09 /time coefficient class 4: vanpool
+~r05=-0.09 /time coefficient class 5: hbw income 1 sov
+~r06=-0.09 /time coefficient class 6: hbw income 2 sov
+~r07=-0.09 /time coefficient class 7: hbw income 3 sov
+~r08=-0.09 /time coefficient class 8: hbw income 4 sov
+~r09=-0.06 /time coefficient class 9: light truck
+~r10=-0.06 /time coefficient class 10: medium truck
+~r11=-0.06 /time coefficient class 11: heavy truck
+3.21
+~/ ...class 1: non-work sov
+~/ ...calc time, distance, and cost difference
+~+|1|y|mf"tdiff"|n|(mf"na1tmt"-mf"na1tmn")|||n|2
+~+|1|y|mf"ddiff"|n|(mf"na1dst"-mf"na1dsn")|||n|2
+~+|1|y|mf"cdiff"|n|((mf"na1cst"-mf"na1tmt")/ms"nvotda"-(mf"na1csn"-mf"na1tmn")/ms"nvotda")|||n|2
+~/ ...calc utility
+~+|1|y|mf"util"|n|-1*((%r01%*mf"tdiff")+(%r01%/(1/ms"nvotda"))*(mf"ddiff"*ms"autoop"+mf"cdiff"))|||n|2
+~/ ...calc probability
+~+|1|y|mf"prob"|n|1/(1+exp(mf"util"))|||n|2
+~/ ...no toll | intrazonal | no free path | free path is same = no diversion
+~+|1|y|mf"prob"|n|((mf"na1cst"-mf"na1tmt")==0)*0 + ((mf"na1cst"-mf"na1tmt")!=0)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(p==q)*0 + (p!=q)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"na1tmn">9999)*1 + (mf"na1tmn"<=9999)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"na1tmt"==mf"na1tmn")*0 + (mf"na1tmt"!=mf"na1tmn")*mf"prob"|||n|2
+~/ ...split demand toll and non-toll
+~+|1|y|mf"nvhdat"|n|mf"nvehda"*mf"prob"|||n|2
+~+|1|y|mf"nvhdan"|n|mf"nvehda"*(1-mf"prob")|||n|2
+~/
+~/ ...class 2: hov 2 
+~/ ...calc time, distance, and cost difference
+~+|1|y|mf"tdiff"|n|(mf"na2tmt"-mf"na2tmn")|||n|2
+~+|1|y|mf"ddiff"|n|(mf"na2dst"-mf"na2dsn")|||n|2
+~+|1|y|mf"cdiff"|n|((mf"na2cst"-mf"na2tmt")/ms"nvots2"-(mf"na2csn"-mf"na2tmn")/ms"nvots2")|||n|2
+~/ ...calc utility
+~+|1|y|mf"util"|n|-1*((%r02%*mf"tdiff")+(%r02%/(1/ms"nvots2"))*(mf"ddiff"*ms"autoop"+mf"cdiff"))|||n|2
+~/ ...calc probability
+~+|1|y|mf"prob"|n|1/(1+exp(mf"util"))|||n|2
+~/ ...no toll | intrazonal | no free path | free path is same = no diversion
+~+|1|y|mf"prob"|n|((mf"na2cst"-mf"na2tmt")==0)*0 + ((mf"na2cst"-mf"na2tmt")!=0)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(p==q)*0 + (p!=q)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"na2tmn">9999)*1 + (mf"na2tmn"<=9999)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"na2tmt"==mf"na2tmn")*0 + (mf"na2tmt"!=mf"na2tmn")*mf"prob"|||n|2
+~/ ...split demand toll and non-toll
+~+|1|y|mf"nvhs2t"|n|mf"nvehs2"*mf"prob"|||n|2
+~+|1|y|mf"nvhs2n"|n|mf"nvehs2"*(1-mf"prob")|||n|2
+~/
+~/ ...class 3: hov 3+ 
+~/ ...calc time, distance, and cost difference
+~+|1|y|mf"tdiff"|n|(mf"na3tmt"-mf"na3tmn")|||n|2
+~+|1|y|mf"ddiff"|n|(mf"na3dst"-mf"na3dsn")|||n|2
+~+|1|y|mf"cdiff"|n|((mf"na3cst"-mf"na3tmt")/ms"nvots3"-(mf"na3csn"-mf"na3tmn")/ms"nvots3")|||n|2
+~/ ...calc utility
+~+|1|y|mf"util"|n|-1*((%r03%*mf"tdiff")+(%r03%/(1/ms"nvots3"))*(mf"ddiff"*ms"autoop"+mf"cdiff"))|||n|2
+~/ ...calc probability
+~+|1|y|mf"prob"|n|1/(1+exp(mf"util"))|||n|2
+~/ ...no toll | intrazonal | no free path | free path is same = no diversion
+~+|1|y|mf"prob"|n|((mf"na3cst"-mf"na3tmt")==0)*0 + ((mf"na3cst"-mf"na3tmt")!=0)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(p==q)*0 + (p!=q)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"na3tmn">9999)*1 + (mf"na3tmn"<=9999)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"na3tmt"==mf"na3tmn")*0 + (mf"na3tmt"!=mf"na3tmn")*mf"prob"|||n|2
+~/ ...split demand toll and non-toll
+~+|1|y|mf"nvhs3t"|n|mf"nvehs3"*mf"prob"|||n|2
+~+|1|y|mf"nvhs3n"|n|mf"nvehs3"*(1-mf"prob")|||n|2
+~/
+~/ ...class 4: vanpool 
+~/ ...calc time, distance, and cost difference
+~+|1|y|mf"tdiff"|n|(mf"na4tmt"-mf"na4tmn")|||n|2
+~+|1|y|mf"ddiff"|n|(mf"na4dst"-mf"na4dsn")|||n|2
+~+|1|y|mf"cdiff"|n|((mf"na4cst"-mf"na4tmt")/ms"nvotvp"-(mf"na4csn"-mf"na4tmn")/ms"nvotvp")|||n|2
+~/ ...calc utility
+~+|1|y|mf"util"|n|-1*((%r04%*mf"tdiff")+(%r04%/(1/ms"nvotvp"))*(mf"ddiff"*ms"autoop"+mf"cdiff"))|||n|2
+~/ ...calc probability
+~+|1|y|mf"prob"|n|1/(1+exp(mf"util"))|||n|2
+~/ ...no toll | intrazonal | no free path | free path is same = no diversion
+~+|1|y|mf"prob"|n|((mf"na4cst"-mf"na4tmt")==0)*0 + ((mf"na4cst"-mf"na4tmt")!=0)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(p==q)*0 + (p!=q)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"na4tmn">9999)*1 + (mf"na4tmn"<=9999)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"na4tmt"==mf"na4tmn")*0 + (mf"na4tmt"!=mf"na4tmn")*mf"prob"|||n|2
+~/ ...split demand toll and non-toll
+~+|1|y|mf"nvpolt"|n|mf"nvpool"*mf"prob"|||n|2
+~+|1|y|mf"nvpoln"|n|mf"nvpool"*(1-mf"prob")|||n|2
+~/
+~/ ...class 5: hbw income 1 sov 
+~/ ...calc time, distance, and cost difference
+~+|1|y|mf"tdiff"|n|(mf"natm1t"-mf"natm1n")|||n|2
+~+|1|y|mf"ddiff"|n|(mf"nads1t"-mf"nads1n")|||n|2
+~+|1|y|mf"cdiff"|n|((mf"nacs1t"-mf"natm1t")/ms"nvot1v"-(mf"nacs1n"-mf"natm1n")/ms"nvot1v")|||n|2
+~/ ...calc utility
+~+|1|y|mf"util"|n|-1*((%r05%*mf"tdiff")+(%r05%/(1/ms"nvot1v"))*(mf"ddiff"*ms"autoop"+mf"cdiff"))|||n|2
+~/ ...calc probability
+~+|1|y|mf"prob"|n|1/(1+exp(mf"util"))|||n|2
+~/ ...no toll | intrazonal | no free path | free path is same = no diversion
+~+|1|y|mf"prob"|n|((mf"nacs1t"-mf"natm1t")==0)*0 + ((mf"nacs1t"-mf"natm1t")!=0)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(p==q)*0 + (p!=q)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"natm1n">9999)*1 + (mf"natm1n"<=9999)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"natm1t"==mf"natm1n")*0 + (mf"natm1t"!=mf"natm1n")*mf"prob"|||n|2
+~/ ...split demand toll and non-toll
+~+|1|y|mf"nhw1vt"|n|mf"nhbw1v"*mf"prob"|||n|2
+~+|1|y|mf"nhw1vn"|n|mf"nhbw1v"*(1-mf"prob")|||n|2
+~/
+~/ ...class 6: hbw income 2 sov 
+~/ ...calc time, distance, and cost difference
+~+|1|y|mf"tdiff"|n|(mf"natm2t"-mf"natm2n")|||n|2
+~+|1|y|mf"ddiff"|n|(mf"nads2t"-mf"nads2n")|||n|2
+~+|1|y|mf"cdiff"|n|((mf"nacs2t"-mf"natm2t")/ms"nvot2v"-(mf"nacs2n"-mf"natm2n")/ms"nvot2v")|||n|2
+~/ ...calc utility
+~+|1|y|mf"util"|n|-1*((%r06%*mf"tdiff")+(%r06%/(1/ms"nvot2v"))*(mf"ddiff"*ms"autoop"+mf"cdiff"))|||n|2
+~/ ...calc probability
+~+|1|y|mf"prob"|n|1/(1+exp(mf"util"))|||n|2
+~/ ...no toll | intrazonal | no free path | free path is same = no diversion
+~+|1|y|mf"prob"|n|((mf"nacs2t"-mf"natm2t")==0)*0 + ((mf"nacs2t"-mf"natm2t")!=0)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(p==q)*0 + (p!=q)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"natm2n">9999)*1 + (mf"natm2n"<=9999)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"natm2t"==mf"natm2n")*0 + (mf"natm2t"!=mf"natm2n")*mf"prob"|||n|2
+~/ ...split demand toll and non-toll
+~+|1|y|mf"nhw2vt"|n|mf"nhbw2v"*mf"prob"|||n|2
+~+|1|y|mf"nhw2vn"|n|mf"nhbw2v"*(1-mf"prob")|||n|2
+~/
+~/ ...class 7: hbw income 3 sov 
+~/ ...calc time, distance, and cost difference
+~+|1|y|mf"tdiff"|n|(mf"natm3t"-mf"natm3n")|||n|2
+~+|1|y|mf"ddiff"|n|(mf"nads3t"-mf"nads3n")|||n|2
+~+|1|y|mf"cdiff"|n|((mf"nacs3t"-mf"natm3t")/ms"nvot3v"-(mf"nacs3n"-mf"natm3n")/ms"nvot3v")|||n|2
+~/ ...calc utility
+~+|1|y|mf"util"|n|-1*((%r07%*mf"tdiff")+(%r07%/(1/ms"nvot3v"))*(mf"ddiff"*ms"autoop"+mf"cdiff"))|||n|2
+~/ ...calc probability
+~+|1|y|mf"prob"|n|1/(1+exp(mf"util"))|||n|2
+~/ ...no toll | intrazonal | no free path | free path is same = no diversion
+~+|1|y|mf"prob"|n|((mf"nacs3t"-mf"natm3t")==0)*0 + ((mf"nacs3t"-mf"natm3t")!=0)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(p==q)*0 + (p!=q)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"natm3n">9999)*1 + (mf"natm3n"<=9999)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"natm3t"==mf"natm3n")*0 + (mf"natm3t"!=mf"natm3n")*mf"prob"|||n|2
+~/ ...split demand toll and non-toll
+~+|1|y|mf"nhw3vt"|n|mf"nhbw3v"*mf"prob"|||n|2
+~+|1|y|mf"nhw3vn"|n|mf"nhbw3v"*(1-mf"prob")|||n|2
+~/
+~/ ...class 8: hbw income 4 sov 
+~/ ...calc time, distance, and cost difference
+~+|1|y|mf"tdiff"|n|(mf"natm4t"-mf"natm4n")|||n|2
+~+|1|y|mf"ddiff"|n|(mf"nads4t"-mf"nads4n")|||n|2
+~+|1|y|mf"cdiff"|n|((mf"nacs4t"-mf"natm4t")/ms"nvot4v"-(mf"nacs4n"-mf"natm4n")/ms"nvot4v")|||n|2
+~/ ...calc utility
+~+|1|y|mf"util"|n|-1*((%r08%*mf"tdiff")+(%r08%/(1/ms"nvot4v"))*(mf"ddiff"*ms"autoop"+mf"cdiff"))|||n|2
+~/ ...calc probability
+~+|1|y|mf"prob"|n|1/(1+exp(mf"util"))|||n|2
+~/ ...no toll | intrazonal | no free path | free path is same = no diversion
+~+|1|y|mf"prob"|n|((mf"nacs4t"-mf"natm4t")==0)*0 + ((mf"nacs4t"-mf"natm4t")!=0)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(p==q)*0 + (p!=q)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"natm4n">9999)*1 + (mf"natm4n"<=9999)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"natm4t"==mf"natm4n")*0 + (mf"natm4t"!=mf"natm4n")*mf"prob"|||n|2
+~/ ...split demand toll and non-toll
+~+|1|y|mf"nhw4vt"|n|mf"nhbw4v"*mf"prob"|||n|2
+~+|1|y|mf"nhw4vn"|n|mf"nhbw4v"*(1-mf"prob")|||n|2
+~/
+~/ ...class 9: light truck 
+~/ ...calc time, distance, and cost difference
+~+|1|y|mf"tdiff"|n|(mf"nlttmt"-mf"nlttmn")|||n|2
+~+|1|y|mf"ddiff"|n|(mf"nltdst"-mf"nltdsn")|||n|2
+~+|1|y|mf"cdiff"|n|((mf"nltcst"-mf"nlttmt")/ms"nvotlt"-(mf"nltcsn"-mf"nlttmn")/ms"nvotlt")|||n|2
+~/ ...calc utility
+~+|1|y|mf"util"|n|-1*((%r09%*mf"tdiff")+(%r09%/(1/ms"nvotlt"))*(mf"ddiff"*ms"lgtop"+mf"cdiff"))|||n|2
+~/ ...calc probability
+~+|1|y|mf"prob"|n|1/(1+exp(mf"util"))|||n|2
+~/ ...no toll | intrazonal | no free path | free path is same = no diversion
+~+|1|y|mf"prob"|n|((mf"nltcst"-mf"nlttmt")==0)*0 + ((mf"nltcst"-mf"nlttmt")!=0)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(p==q)*0 + (p!=q)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"nlttmn">9999)*1 + (mf"nlttmn"<=9999)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"nlttmt"==mf"nlttmn")*0 + (mf"nlttmt"!=mf"nlttmn")*mf"prob"|||n|2
+~/ ...split demand toll and non-toll
+~+|1|y|mf"nlttkt"|n|mf"nlttrk"*mf"prob"|||n|2
+~+|1|y|mf"nlttkn"|n|mf"nlttrk"*(1-mf"prob")|||n|2
+~/
+~/ ...class 10: medium truck 
+~/ ...calc time, distance, and cost difference
+~+|1|y|mf"tdiff"|n|(mf"nmdtmt"-mf"nmdtmn")|||n|2
+~+|1|y|mf"ddiff"|n|(mf"nmddst"-mf"nmddsn")|||n|2
+~+|1|y|mf"cdiff"|n|((mf"nmdcst"-mf"nmdtmt")/ms"nvotmd"-(mf"nmdcsn"-mf"nmdtmn")/ms"nvotmd")|||n|2
+~/ ...calc utility
+~+|1|y|mf"util"|n|-1*((%r10%*mf"tdiff")+(%r10%/(1/ms"nvotmd"))*(mf"ddiff"*ms"medop"+mf"cdiff"))|||n|2
+~/ ...calc probability
+~+|1|y|mf"prob"|n|1/(1+exp(mf"util"))|||n|2
+~/ ...no toll | intrazonal | no free path | free path is same = no diversion
+~+|1|y|mf"prob"|n|((mf"nmdcst"-mf"nmdtmt")==0)*0 + ((mf"nmdcst"-mf"nmdtmt")!=0)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(p==q)*0 + (p!=q)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"nmdtmn">9999)*1 + (mf"nmdtmn"<=9999)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"nmdtmt"==mf"nmdtmn")*0 + (mf"nmdtmt"!=mf"nmdtmn")*mf"prob"|||n|2
+~/ ...split demand toll and non-toll
+~+|1|y|mf"nmdtkt"|n|mf"nmdtrk"*mf"prob"|||n|2
+~+|1|y|mf"nmdtkn"|n|mf"nmdtrk"*(1-mf"prob")|||n|2
+~/
+~/ ...class 11: heavy truck 
+~/ ...calc time, distance, and cost difference
+~+|1|y|mf"tdiff"|n|(mf"nhytmt"-mf"nhytmn")|||n|2
+~+|1|y|mf"ddiff"|n|(mf"nhydst"-mf"nhydsn")|||n|2
+~+|1|y|mf"cdiff"|n|((mf"nhycst"-mf"nhytmt")/ms"nvothv"-(mf"nhycsn"-mf"nhytmn")/ms"nvothv")|||n|2
+~/ ...calc utility
+~+|1|y|mf"util"|n|-1*((%r11%*mf"tdiff")+(%r11%/(1/ms"nvothv"))*(mf"ddiff"*ms"hvyop"+mf"cdiff"))|||n|2
+~/ ...calc probability
+~+|1|y|mf"prob"|n|1/(1+exp(mf"util"))|||n|2
+~/ ...no toll | intrazonal | no free path | free path is same = no diversion
+~+|1|y|mf"prob"|n|((mf"nhycst"-mf"nhytmt")==0)*0 + ((mf"nhycst"-mf"nhytmt")!=0)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(p==q)*0 + (p!=q)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"nhytmn">9999)*1 + (mf"nhytmn"<=9999)*mf"prob"|||n|2
+~+|1|y|mf"prob"|n|(mf"nhytmt"==mf"nhytmn")*0 + (mf"nhytmt"!=mf"nhytmn")*mf"prob"|||n|2
+~/ ...split demand toll and non-toll
+~+|1|y|mf"nhvtkt"|n|mf"nhvtrk"*mf"prob"|||n|2
+~+|1|y|mf"nhvtkn"|n|mf"nhvtrk"*(1-mf"prob")|||n|2
+q
+~/exit emme
+q

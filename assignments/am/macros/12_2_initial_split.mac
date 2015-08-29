@@ -1,0 +1,31 @@
+~?!i&32768
+~o|295
+batchin=?
+reports=assign.rpt
+~/ ...initial split of demand into toll and non-toll
+3.21
+~+|1|y|mf"avhdat"|n|mf"avehda"*0.01|||n|2
+~+|1|y|mf"avhs2t"|n|mf"avehs2"*0.01|||n|2
+~+|1|y|mf"avhs3t"|n|mf"avehs3"*0.01|||n|2
+~+|1|y|mf"avpolt"|n|mf"avpool"*0.01|||n|2
+~+|1|y|mf"ahw1vt"|n|mf"ahbw1v"*0.01|||n|2
+~+|1|y|mf"ahw2vt"|n|mf"ahbw2v"*0.01|||n|2
+~+|1|y|mf"ahw3vt"|n|mf"ahbw3v"*0.01|||n|2
+~+|1|y|mf"ahw4vt"|n|mf"ahbw4v"*0.01|||n|2
+~+|1|y|mf"alttkt"|n|mf"alttrk"*0.01|||n|2
+~+|1|y|mf"amdtkt"|n|mf"amdtrk"*0.01|||n|2
+~+|1|y|mf"ahvtkt"|n|mf"ahvtrk"*0.01|||n|2
+~+|1|y|mf"avhdan"|n|mf"avehda"*0.99|||n|2
+~+|1|y|mf"avhs2n"|n|mf"avehs2"*0.99|||n|2
+~+|1|y|mf"avhs3n"|n|mf"avehs3"*0.99|||n|2
+~+|1|y|mf"avpoln"|n|mf"avpool"*0.99|||n|2
+~+|1|y|mf"ahw1vn"|n|mf"ahbw1v"*0.99|||n|2
+~+|1|y|mf"ahw2vn"|n|mf"ahbw2v"*0.99|||n|2
+~+|1|y|mf"ahw3vn"|n|mf"ahbw3v"*0.99|||n|2
+~+|1|y|mf"ahw4vn"|n|mf"ahbw4v"*0.99|||n|2
+~+|1|y|mf"alttkn"|n|mf"alttrk"*0.99|||n|2
+~+|1|y|mf"amdtkn"|n|mf"amdtrk"*0.99|||n|2
+~+|1|y|mf"ahvtkn"|n|mf"ahvtrk"*0.99|||n|2
+q         
+~/exit emme
+q

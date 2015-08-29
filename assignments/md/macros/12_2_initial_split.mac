@@ -1,0 +1,31 @@
+~?!i&32768
+~o|295
+batchin=?
+reports=assign.rpt
+~/ ...initial split of demand into toll and non-toll
+3.21
+~+|1|y|mf"mvhdat"|n|mf"mvehda"*0.01|||n|2
+~+|1|y|mf"mvhs2t"|n|mf"mvehs2"*0.01|||n|2
+~+|1|y|mf"mvhs3t"|n|mf"mvehs3"*0.01|||n|2
+~+|1|y|mf"mvpolt"|n|mf"mvpool"*0.01|||n|2
+~+|1|y|mf"mhw1vt"|n|mf"mhbw1v"*0.01|||n|2
+~+|1|y|mf"mhw2vt"|n|mf"mhbw2v"*0.01|||n|2
+~+|1|y|mf"mhw3vt"|n|mf"mhbw3v"*0.01|||n|2
+~+|1|y|mf"mhw4vt"|n|mf"mhbw4v"*0.01|||n|2
+~+|1|y|mf"mlttkt"|n|mf"mlttrk"*0.01|||n|2
+~+|1|y|mf"mmdtkt"|n|mf"mmdtrk"*0.01|||n|2
+~+|1|y|mf"mhvtkt"|n|mf"mhvtrk"*0.01|||n|2
+~+|1|y|mf"mvhdan"|n|mf"mvehda"*0.99|||n|2
+~+|1|y|mf"mvhs2n"|n|mf"mvehs2"*0.99|||n|2
+~+|1|y|mf"mvhs3n"|n|mf"mvehs3"*0.99|||n|2
+~+|1|y|mf"mvpoln"|n|mf"mvpool"*0.99|||n|2
+~+|1|y|mf"mhw1vn"|n|mf"mhbw1v"*0.99|||n|2
+~+|1|y|mf"mhw2vn"|n|mf"mhbw2v"*0.99|||n|2
+~+|1|y|mf"mhw3vn"|n|mf"mhbw3v"*0.99|||n|2
+~+|1|y|mf"mhw4vn"|n|mf"mhbw4v"*0.99|||n|2
+~+|1|y|mf"mlttkn"|n|mf"mlttrk"*0.99|||n|2
+~+|1|y|mf"mmdtkn"|n|mf"mmdtrk"*0.99|||n|2
+~+|1|y|mf"mhvtkn"|n|mf"mhvtrk"*0.99|||n|2
+q         
+~/exit emme
+q

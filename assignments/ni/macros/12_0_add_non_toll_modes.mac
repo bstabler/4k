@@ -1,0 +1,29 @@
+~?!i&32768
+~o|295
+batchin=?
+reports=assign.rpt
+~/
+s=1006
+~/ ...add non toll modes
+2.01
+~+|2|4|S|sovn|2
+~+|2|4|H|hov2n|4
+~+|2|4|I|hov3+n|5
+~+|2|4|J|vanpn|6
+~+|2|4|T|hvytrkn|3
+~+|2|4|U|medtrkn|3
+~+|2|4|V|lgttrkn|3
+q
+~/ ...add non toll modes to links
+2.41
+~+|1|y|modes|1|S|mode=s|and @toll1=0||y
+~+|1|y|modes|1|H|mode=h|and @toll2=0||y
+~+|1|y|modes|1|I|mode=i|and @toll3=0||y
+~+|1|y|modes|1|J|mode=j|and @toll3=0||y
+~+|1|y|modes|1|T|mode=t|and @trkc1=0||y
+~+|1|y|modes|1|U|mode=u|and @trkc2=0||y
+~+|1|y|modes|1|V|mode=v|and @trkc3=0||y
+q
+~/exit emme
+~/
+q

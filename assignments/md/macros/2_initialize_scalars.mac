@@ -16,6 +16,10 @@ reports=initialization.rpt
 ~+|1|ms09|mvotlt|md light truck vot|0
 ~+|1|ms10|mvotmd|md medium truck vot|0
 ~+|1|ms11|mvothv|md heavy truck vot|0
+~+|1|ms12|autoop|autoop|0
+~+|1|ms13|lgtop|lgtop|0
+~+|1|ms14|medop|medop|0
+~+|1|ms15|hvyop|hvyop|0
 q
 ~#
 ~/end: 2_initialize_scalars.mac
