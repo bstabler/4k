@@ -22,7 +22,7 @@ reports=summary.rpt
 ~+|1|y|ms273|y|asnwrp|AM SOV NonWork Regional Persons|0|mf"avehda"|||n|||2
 ~+|1|y|ms274|y|ah2rp|AM HOv 2 Regional Persons|0|mf"avehs2"*2.0|||n|||2
 ~+|1|y|ms275|y|ah3wrp|AM HOV 3+ Regional Persons|0|mf"avehs3"*3.5|||n|||2
-~+|1|y|ms276|y|avprp|AM Vanpool Regional Persons|0|mf"avpool"*6.0|||n|||2
+~+|1|y|ms276|y|avprp|AM Vanpool Regional Persons|0|mf"avpool"*5.0|||n|||2
 ~+|1|y|ms277|y|asw1rp|AM HBW #1 Regional Persons|0|mf"ahbw1v"|||n|||2
 ~+|1|y|ms278|y|asw2rp|AM HBW #2 Regional Persons|0|mf"ahbw2v"|||n|||2
 ~+|1|y|ms279|y|asw3rp|AM HBW #3 Regional Persons|0|mf"ahbw3v"|||n|||2
@@ -49,7 +49,7 @@ reports=summary.rpt
 ~+|1|y|ms299|y|msnwrp|MD SOV NonWork Regional Persons|0|mf"mvehda"|||n|||2
 ~+|1|y|ms300|y|mh2rp|MD HOv 2 Regional Persons|0|mf"mvehs2"*2.0|||n|||2
 ~+|1|y|ms301|y|mh3wrp|MD HOV 3+ Regional Persons|0|mf"mvehs3"*3.5|||n|||2
-~+|1|y|ms302|y|mvprp|MD Vanpool Regional Persons|0|mf"mvpool"*6.0|||n|||2
+~+|1|y|ms302|y|mvprp|MD Vanpool Regional Persons|0|mf"mvpool"*5.0|||n|||2
 ~+|1|y|ms303|y|msw1rp|MD HBW #1 Regional Persons|0|mf"mhbw1v"|||n|||2
 ~+|1|y|ms304|y|msw2rp|MD HBW #2 Regional Persons|0|mf"mhbw2v"|||n|||2
 ~+|1|y|ms305|y|msw3rp|MD HBW #3 Regional Persons|0|mf"mhbw3v"|||n|||2
@@ -76,7 +76,7 @@ reports=summary.rpt
 ~+|1|y|ms324|y|psnwrp|PM SOV NonWork Regional Persons|0|mf"pvehda"|||n|||2
 ~+|1|y|ms325|y|ph2rp|PM HOv 2 Regional Persons|0|mf"pvehs2"*2.0|||n|||2
 ~+|1|y|ms326|y|ph3wrp|PM HOV 3+ Regional Persons|0|mf"pvehs3"*3.5|||n|||2
-~+|1|y|ms327|y|pvprp|PM Vanpool Regional Persons|0|mf"pvpool"*6.0|||n|||2
+~+|1|y|ms327|y|pvprp|PM Vanpool Regional Persons|0|mf"pvpool"*5.0|||n|||2
 ~+|1|y|ms328|y|psw1rp|PM HBW #1 Regional Persons|0|mf"phbw1v"|||n|||2
 ~+|1|y|ms329|y|psw2rp|PM HBW #2 Regional Persons|0|mf"phbw2v"|||n|||2
 ~+|1|y|ms330|y|psw3rp|PM HBW #3 Regional Persons|0|mf"phbw3v"|||n|||2
@@ -103,7 +103,7 @@ reports=summary.rpt
 ~+|1|y|ms349|y|esnwrp|EV SOV NonWork Regional Persons|0|mf"evehda"|||n|||2
 ~+|1|y|ms350|y|eh2rp|EV HOv 2 Regional Persons|0|mf"evehs2"*2.0|||n|||2
 ~+|1|y|ms351|y|eh3wrp|EV HOV 3+ Regional Persons|0|mf"evehs3"*3.5|||n|||2
-~+|1|y|ms352|y|evprp|EV Vanpool Regional Persons|0|mf"evpool"*6.0|||n|||2
+~+|1|y|ms352|y|evprp|EV Vanpool Regional Persons|0|mf"evpool"*5.0|||n|||2
 ~+|1|y|ms353|y|esw1rp|EV HBW #1 Regional Persons|0|mf"ehbw1v"|||n|||2
 ~+|1|y|ms354|y|esw2rp|EV HBW #2 Regional Persons|0|mf"ehbw2v"|||n|||2
 ~+|1|y|ms355|y|esw3rp|EV HBW #3 Regional Persons|0|mf"ehbw3v"|||n|||2
@@ -130,7 +130,7 @@ reports=summary.rpt
 ~+|1|y|ms374|y|nsnwrp|NI SOV NonWork Regional Persons|0|mf"nvehda"|||n|||2
 ~+|1|y|ms375|y|nh2rp|NI HOv 2 Regional Persons|0|mf"nvehs2"*2.0|||n|||2
 ~+|1|y|ms376|y|nh3wrp|NI HOV 3+ Regional Persons|0|mf"nvehs3"*3.5|||n|||2
-~+|1|y|ms377|y|nvprp|NI Vanpool Regional Persons|0|mf"nvpool"*6.0|||n|||2
+~+|1|y|ms377|y|nvprp|NI Vanpool Regional Persons|0|mf"nvpool"*5.0|||n|||2
 ~+|1|y|ms378|y|nsw1rp|NI HBW #1 Regional Persons|0|mf"nhbw1v"|||n|||2
 ~+|1|y|ms379|y|nsw2rp|NI HBW #2 Regional Persons|0|mf"nhbw2v"|||n|||2
 ~+|1|y|ms380|y|nsw3rp|NI HBW #3 Regional Persons|0|mf"nhbw3v"|||n|||2
