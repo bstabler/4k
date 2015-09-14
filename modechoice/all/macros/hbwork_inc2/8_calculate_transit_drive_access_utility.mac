@@ -16,7 +16,7 @@ ms"trdivt"*(mf"pnrtm"+mf"ivtda")
 +
 ms"trdovt"*(mf"wlkda"+mf"iwtda"+mf"xfrda")
 +
-ms"trdcos"*(mf"dapct"+mf"farda")
+ms"trdcos"*ms"hw2cos"*(mf"dapct"+mf"farda")
 )
 ~+|||y|1,%1%||1,%1%||2
 q

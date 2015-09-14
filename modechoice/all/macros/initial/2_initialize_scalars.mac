@@ -144,7 +144,15 @@ reports=initilization.rpt
 ~+|1|ms118|mvotlt|md light truck vot|0
 ~+|1|ms119|mvotmd|md medium truck vot|0
 ~+|1|ms120|mvothv|md heavy truck vot|0
-q
+~/#
+~+|1|ms121|hbccos|md sov hbw income 2 vot|1.3
+~+|1|ms122|hnwcos|md sov hbw income 3 vot|1.5
+~+|1|ms123|hbscos|md sov hbw income 4 vot|1.5
+~+|1|ms124|hw1cos|md light truck vot|1.5
+~+|1|ms125|hw2cos|md medium truck vot|1.5
+~+|1|ms126|hw3cos|md heavy truck vot|1.5
+~+|1|ms127|hw4cos|md medium truck vot|1.3
+~+|1|ms128|nhbcos|md heavy truck vot|1.5
 q
 ~#
 ~/end: 3_initialize_scalars.mac

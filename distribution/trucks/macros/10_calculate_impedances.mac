@@ -14,19 +14,25 @@ q
 ~/ ...call module 3.21: matrix calculations
 ~/ ...calculate light truck distribution impedances
 3.21
-~+|1|y|mf"lgtimp"|n|exp(-0.0150*(mf"blgtcs"+(mf"blgtds"*ms"lgtop"*ms"mvotlt")))*mf"intflg"
+~+|1|y|mf"lgtimp"|n
+~+|exp(-0.0125*(.5*(mf"blgtcs"-mf"blgttm")+
+~+|1*(mf"blgttm")+.5*(mf"blgtds"*ms"lgtop"*ms"mvotlt")))*mf"intflg"
 ~+|||y|1,%3%||1,%3%||2
 q
 ~/ ...call module 3.21: matrix calculations
 ~/ ...calculate medium truck distribution impedances
 3.21
-~+|1|y|mf"medimp"|n|exp(-0.0053*(mf"bmedcs"+(mf"bmedds"*ms"medop"*ms"mvotmd")))*mf"intflg"
+~+|1|y|mf"medimp"|n
+~+|exp(-0.0070*(.5*(mf"bmedcs"-mf"bmedtm")+
+~+|1*(mf"bmedtm")+.5*(mf"bmedds"*ms"medop"*ms"mvotmd")))*mf"intflg"
 ~+|||y|1,%3%||1,%3%||2
 q
 ~/ ...call module 3.21: matrix calculations
 ~/ ...calculate heavy truck distribution impedances
 3.21
-~+|1|y|mf"hvyimp"|n|exp(-0.00001*(mf"bhvycs"+(mf"bhvyds"*ms"hvyop"*ms"mvothv")))*mf"intflg"
+~+|1|y|mf"hvyimp"|n
+~+|exp(-0.0000075*(.5*(mf"bhvycs"-mf"bhvytm")+
+~+|1*(mf"bhvytm")+.5*(mf"bhvyds"*ms"hvyop"*ms"mvothv")))*mf"intflg"
 ~+|||y|1,%3%||1,%3%||2
 q
 ~#

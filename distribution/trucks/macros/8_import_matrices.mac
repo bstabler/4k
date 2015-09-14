@@ -25,6 +25,16 @@ q
 ~+|2|3|3|mf"bmedcs"|mf"bmedcs"|n|y
 ~+|2|3|3|mf"bhvycs"|mf"bhvycs"|n|y
 q
+~/ ...call module 1.31: import data from external database
+1.31
+~/ ...open bidirectional cost emmebank
+~+|1
+..\..\Skims\BiDirectional\time\emmebank
+~/ ...import bidirectional cost matrices
+~+|2|3|3|mf"blgttm"|mf"blgttm"|n|y
+~+|2|3|3|mf"bmedtm"|mf"bmedtm"|n|y
+~+|2|3|3|mf"bhvytm"|mf"bhvytm"|n|y
+q
 ~#
 ~/end: 8_import_matrices.mac
 ~/exit emme

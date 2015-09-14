@@ -25,6 +25,10 @@ reports=6_initialize_full_matrices.rpt
 ~+|1|mf11|lgtdis|light truck distribution|0
 ~+|1|mf12|meddis|medium truck distribution|0
 ~+|1|mf13|hvydis|heavy truck distribution|0
+~#
+~+|1|mf14|blgttm|light truck bidirectional time|0
+~+|1|mf15|bmedtm|medium truck bidirectional time|0
+~+|1|mf16|bhvytm|heavy truck bidirectional time|0
 q
 ~#
 ~/end: 6_initialize_full_matrices.mac
